@@ -4,101 +4,278 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Sagar Mendiratta — CV</title>
-  <meta name="description" content="Sagar Mendiratta — Finance Professional (Risk Management, Financial Analysis, Derivatives). Experience across HDFC Credila, TradeX, Arcesium (D.E. Shaw), and CRISIL. Based in Mumbai. PGCFA, IIM Calcutta." />
+  <meta name="description" content="Sagar Mendiratta — Finance Professional (Risk Management, Financial Analysis, Derivatives). Experience across HDFC Credila, TradeX, Arcesium (D.E. Shaw), and CRISIL. Mumbai. PGCFA, IIM Calcutta." />
   <meta property="og:title" content="Sagar Mendiratta — CV" />
-  <meta property="og:description" content="Finance Professional • Risk Management • Derivatives • Financial Analysis Based in Mumbai. PGCFA, IIM Calcutta." />
+  <meta property="og:description" content="Finance Professional • Risk Management • Derivatives • Financial Analysis • Mumbai • PGCFA, IIM Calcutta" />
   <meta property="og:type" content="website" />
 
   <style>
     :root{
-      --bg:#0b0f14; --card:#111827; --muted:#94a3b8; --text:#e5e7eb;
-      --line:#1f2a37; --accent:#60a5fa; --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --bg:#070A12;
+      --bg2:#0B1020;
+
+      --surface: rgba(255,255,255,.045);
+      --surface2: rgba(255,255,255,.07);
+
+      --text:#EAF0FF;
+      --muted:#A9B6D6;
+
+      --border: rgba(148,163,184,.18);
+
+      --accent:#3B82F6;     /* executive blue */
+      --accent2:#22C55E;    /* success green */
+
+      --shadow: 0 14px 40px rgba(0,0,0,.45);
+
+      --radius-xl: 20px;
+      --radius-lg: 16px;
+      --radius-md: 12px;
+
+      --max: 1040px;
     }
+
+    @media (prefers-color-scheme: light){
+      :root{
+        --bg:#F6F8FC;
+        --bg2:#FFFFFF;
+
+        --surface: rgba(2,6,23,.04);
+        --surface2: rgba(2,6,23,.06);
+
+        --text:#0B1220;
+        --muted:#475569;
+
+        --border: rgba(2,6,23,.12);
+
+        --accent:#1D4ED8;
+        --accent2:#16A34A;
+
+        --shadow: 0 14px 35px rgba(2,6,23,.10);
+      }
+    }
+
     *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
     body{
-      margin:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-      background: radial-gradient(1200px 600px at 20% -10%, rgba(96,165,250,.18), transparent 60%),
-                  radial-gradient(900px 500px at 90% 10%, rgba(34,197,94,.10), transparent 60%),
-                  var(--bg);
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      background:
+        radial-gradient(900px 520px at 10% -10%, rgba(59,130,246,.22), transparent 60%),
+        radial-gradient(900px 520px at 100% 10%, rgba(34,197,94,.14), transparent 60%),
+        linear-gradient(180deg, var(--bg2), var(--bg));
       color:var(--text);
       line-height:1.55;
     }
+
     a{color:var(--accent); text-decoration:none}
     a:hover{text-decoration:underline}
-    .wrap{max-width:980px; margin:0 auto; padding:28px 18px 80px}
-    .top{
-      display:flex; gap:18px; align-items:center; justify-content:space-between;
-      padding:22px; border:1px solid var(--line); border-radius:18px; background:rgba(17,24,39,.75);
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(8px);
+
+    .wrap{max-width:var(--max); margin:0 auto; padding:28px 18px 84px}
+
+    .skip{
+      position:absolute; left:-999px; top:auto; width:1px; height:1px; overflow:hidden;
     }
+    .skip:focus{
+      left:18px; top:18px; width:auto; height:auto; padding:10px 12px;
+      background:var(--bg2); border:1px solid var(--border); border-radius:12px; z-index:999;
+    }
+
+    /* ===== Header ===== */
+    .top{
+      position:relative;
+      display:flex; gap:18px; align-items:center; justify-content:space-between;
+      padding:22px;
+      border:1px solid var(--border);
+      border-radius:var(--radius-xl);
+      background:var(--surface);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+      overflow:hidden;
+    }
+    .top::before{
+      content:"";
+      position:absolute; inset:-2px -2px auto -2px; height:3px;
+      background: linear-gradient(90deg, var(--accent), #60A5FA, var(--accent2));
+      opacity:.95;
+    }
+
     .left{display:flex; gap:16px; align-items:center; min-width:0}
     .avatar{
-      width:78px; height:78px; border-radius:18px; overflow:hidden; border:1px solid var(--line);
-      background: linear-gradient(145deg, rgba(96,165,250,.25), rgba(255,255,255,.04));
-      flex:0 0 auto; display:grid; place-items:center; color:rgba(229,231,235,.75); font-weight:800;
+      width:82px; height:82px; border-radius:18px; overflow:hidden;
+      border:1px solid var(--border);
+      background: linear-gradient(145deg, rgba(59,130,246,.28), rgba(255,255,255,.03));
+      flex:0 0 auto;
+      display:grid; place-items:center;
+      color:rgba(234,240,255,.78);
+      font-weight:850;
+      letter-spacing:.5px;
     }
     .avatar img{width:100%; height:100%; object-fit:cover; display:block}
-    .name{font-size:26px; font-weight:780; letter-spacing:.2px; margin:0}
+
+    .name{font-size:28px; font-weight:850; letter-spacing:.2px; margin:0}
     .headline{margin:6px 0 0; color:var(--muted); font-size:14.5px}
     .meta{margin-top:10px; display:flex; flex-wrap:wrap; gap:10px; color:var(--muted); font-size:13.5px}
-    .meta span{display:flex; gap:7px; align-items:center}
-    .dot{width:6px; height:6px; border-radius:999px; background:rgba(148,163,184,.6)}
+    .meta span{display:flex; gap:8px; align-items:center}
+    .dot{width:6px; height:6px; border-radius:999px; background:rgba(169,182,214,.55)}
+
     .actions{display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end}
     .btn{
-      border:1px solid var(--line); background:rgba(15,23,42,.55);
-      color:var(--text); padding:10px 12px; border-radius:12px; font-weight:650;
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.035);
+      color:var(--text);
+      padding:10px 12px;
+      border-radius:12px;
+      font-weight:700;
       display:inline-flex; gap:8px; align-items:center;
+      transition: transform .15s ease, border-color .15s ease, background .15s ease, box-shadow .15s ease;
+      outline:none;
     }
-    .btn.primary{background:rgba(96,165,250,.18); border-color:rgba(96,165,250,.35)}
-    .btn:hover{transform: translateY(-1px); transition:.15s ease}
+    .btn.primary{
+      background: linear-gradient(180deg, rgba(59,130,246,.22), rgba(59,130,246,.12));
+      border-color: rgba(59,130,246,.45);
+    }
+    .btn:hover{transform: translateY(-1px); text-decoration:none}
+    .btn:focus-visible{
+      box-shadow: 0 0 0 4px rgba(59,130,246,.22);
+      border-color: rgba(59,130,246,.70);
+    }
+
+    /* ===== Nav ===== */
     nav{
+      position: sticky;
+      top: 14px;
+      z-index: 20;
       margin:16px 0 0;
-      display:flex; gap:10px; flex-wrap:wrap;
-      padding:0 6px;
+      padding:10px 10px;
+      border:1px solid var(--border);
+      border-radius:14px;
+      background: rgba(10,14,26,.55);
+      backdrop-filter: blur(10px);
+      display:flex; gap:8px; flex-wrap:wrap;
+    }
+    @media (prefers-color-scheme: light){
+      nav{background: rgba(255,255,255,.75)}
+      .btn{background: rgba(2,6,23,.03)}
+      .dot{background: rgba(71,85,105,.55)}
+      .avatar{color: rgba(11,18,32,.70)}
     }
     nav a{
-      color:var(--muted); font-size:13.5px; padding:8px 10px; border-radius:10px;
+      color:var(--muted);
+      font-size:13.5px;
+      padding:8px 10px;
+      border-radius:10px;
       border:1px solid transparent;
+      transition: border-color .15s ease, color .15s ease, background .15s ease;
     }
-    nav a:hover{color:var(--text); border-color:var(--line); text-decoration:none}
+    nav a:hover{
+      color:var(--text);
+      border-color: var(--border);
+      background: rgba(255,255,255,.04);
+      text-decoration:none;
+    }
+    @media (prefers-color-scheme: light){
+      nav a:hover{background: rgba(2,6,23,.04)}
+    }
+
+    /* ===== Layout ===== */
     .grid{
       margin-top:18px;
-      display:grid; grid-template-columns: 1.35fr .65fr; gap:14px;
+      display:grid;
+      grid-template-columns: 1.35fr .65fr;
+      gap:14px;
     }
-    @media (max-width:860px){ .grid{grid-template-columns:1fr} .actions{justify-content:flex-start} }
+    @media (max-width:900px){
+      .grid{grid-template-columns:1fr}
+      .actions{justify-content:flex-start}
+      nav{top:10px}
+    }
+
     .card{
-      border:1px solid var(--line); border-radius:18px; background:rgba(17,24,39,.55);
-      box-shadow: 0 8px 20px rgba(0,0,0,.25);
+      border:1px solid var(--border);
+      border-radius:var(--radius-xl);
+      background: var(--surface);
+      box-shadow: 0 10px 26px rgba(0,0,0,.22);
       padding:18px;
     }
     .h{margin:0 0 10px; font-size:16px; letter-spacing:.2px}
     .p{margin:0; color:var(--muted); font-size:14.5px}
+
+    .sep{height:1px; background:rgba(148,163,184,.16); margin:14px 0}
+    @media (prefers-color-scheme: light){
+      .sep{background: rgba(2,6,23,.12)}
+    }
+
+    /* ===== Experience items ===== */
     .list{margin:12px 0 0; padding:0; list-style:none; display:flex; flex-direction:column; gap:12px}
-    .item{padding:12px; border:1px solid var(--line); border-radius:14px; background:rgba(15,23,42,.38)}
+    .item{
+      padding:12px 12px 12px 14px;
+      border:1px solid var(--border);
+      border-radius:var(--radius-lg);
+      background: var(--surface2);
+      position:relative;
+      overflow:hidden;
+    }
+    .item::before{
+      content:"";
+      position:absolute; left:0; top:0; bottom:0; width:3px;
+      background: linear-gradient(180deg, var(--accent), rgba(34,197,94,.85));
+      opacity:.80;
+    }
     .item .t{display:flex; justify-content:space-between; gap:10px; align-items:flex-start}
-    .role{margin:0; font-weight:760}
+    .role{margin:0; font-weight:820}
     .when{color:var(--muted); font-size:13px; white-space:nowrap}
     .org{margin:4px 0 0; color:var(--muted); font-size:13.5px}
     .bullets{margin:10px 0 0 18px; color:var(--text); font-size:14.5px}
     .bullets li{margin:6px 0}
+
+    /* ===== Chips ===== */
     .chips{display:flex; flex-wrap:wrap; gap:8px; margin-top:10px}
-    .chip{padding:7px 10px; border-radius:999px; border:1px solid var(--line); background:rgba(15,23,42,.35); color:var(--text); font-size:13px}
+    .chip{
+      padding:7px 10px;
+      border-radius:999px;
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.03);
+      color:var(--text);
+      font-size:13px;
+    }
+    .chip.good{
+      border-color: rgba(34,197,94,.42);
+      background: rgba(34,197,94,.10);
+    }
+    @media (prefers-color-scheme: light){
+      .chip{background: rgba(2,6,23,.03)}
+      .chip.good{background: rgba(22,163,74,.10); border-color: rgba(22,163,74,.30)}
+    }
+
     .small{font-size:13.5px; color:var(--muted)}
-    .sep{height:1px; background:var(--line); margin:14px 0}
+    .kbd{
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.03);
+      padding:3px 8px; border-radius:8px;
+      color:var(--text);
+    }
+
     footer{
       margin-top:18px; color:var(--muted); font-size:13px; padding:0 6px;
       display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;
     }
-    .kbd{border:1px solid var(--line); background:rgba(15,23,42,.35); padding:3px 8px; border-radius:8px; color:var(--text)}
+
+    @media print{
+      body{background:#fff; color:#000}
+      nav,.actions,.skip{display:none !important}
+      .card,.top{box-shadow:none; background:#fff}
+      .wrap{padding:0}
+      a{color:#000; text-decoration:none}
+    }
   </style>
 </head>
 <body>
+  <a class="skip" href="#summary">Skip to content</a>
+
   <div class="wrap">
     <header class="top">
       <div class="left">
         <div class="avatar" aria-label="Profile photo">
-          <!-- Put profile.jpg in the repo root -->
           <img src="profile.jpg" alt="Sagar Mendiratta" onerror="this.remove(); this.parentElement.textContent='SM';" />
         </div>
 
@@ -117,15 +294,15 @@
       <div class="actions">
         <a class="btn primary" href="resume.pdf" target="_blank" rel="noreferrer">⬇️ Download CV</a>
         <a class="btn" href="mailto:sagarmendiratta04@gmail.com">✉️ Email</a>
+        <a class="btn" href="https://www.linkedin.com/in/sagar-mendiratta-iimcalumni/" target="_blank" rel="noreferrer">in LinkedIn</a>
         <a class="btn" href="#experience">💼 Experience</a>
-        <a class="btn" href="#skills">🧠 Skills</a>
       </div>
     </header>
 
-    <nav>
-      <a href="#summary">Summary</a>
+    <nav aria-label="On-page navigation">
+      <a href="#summary">About</a>
       <a href="#experience">Experience</a>
-      <a href="#highlights">Key Highlights</a>
+      <a href="#highlights">Highlights</a>
       <a href="#resume">Resume</a>
       <a href="#skills">Skills & Tools</a>
       <a href="#education">Education</a>
@@ -134,7 +311,7 @@
     </nav>
 
     <div class="grid">
-      <main class="card">
+      <main class="card" id="main">
         <section id="summary">
           <h2 class="h">About</h2>
           <p class="p">
@@ -223,8 +400,8 @@
         <section id="highlights">
           <h2 class="h">Key Highlights</h2>
           <div class="chips">
-            <span class="chip">10k+ clients onboarded (TradeX)</span>
-            <span class="chip">20+ hires led (TradeX)</span>
+            <span class="chip good">10k+ clients onboarded (TradeX)</span>
+            <span class="chip good">20+ hires led (TradeX)</span>
             <span class="chip">AUM ~$400M exposure (Arcesium)</span>
             <span class="chip">IRS notionals $2M–$20M validated</span>
             <span class="chip">~50% reduction in valuation errors</span>
@@ -233,16 +410,16 @@
             <span class="chip">Climate risk model (R)</span>
           </div>
         </section>
+
         <div class="sep"></div>
 
         <section id="resume">
           <h2 class="h">Resume (PDF)</h2>
           <p class="small">If the preview doesn’t load on your device, use the “Download CV” button at the top.</p>
-          <div style="margin-top:10px; border:1px solid var(--line); border-radius:14px; overflow:hidden; background:rgba(15,23,42,.28)">
+          <div style="margin-top:10px; border:1px solid var(--border); border-radius:16px; overflow:hidden; background:var(--surface2)">
             <iframe title="Resume PDF" src="resume.pdf#view=FitH" style="width:100%; height:560px; border:0"></iframe>
           </div>
         </section>
-
       </main>
 
       <aside class="card">
@@ -269,9 +446,6 @@
             <span class="chip">Splunk</span>
             <span class="chip">Geneos</span>
           </div>
-          <p class="small" style="margin-top:10px;">
-            Tip: Add role-specific tools (e.g., Python, Power BI) only if you actively use them.
-          </p>
         </section>
 
         <div class="sep"></div>
@@ -315,7 +489,7 @@
           <p class="p">Email: <a href="mailto:sagarmendiratta04@gmail.com">sagarmendiratta04@gmail.com</a></p>
           <p class="p">Phone: <a href="tel:+919868755288">+91 98687 55288</a></p>
           <p class="p">LinkedIn: <a href="https://www.linkedin.com/in/sagar-mendiratta-iimcalumni/" target="_blank" rel="noreferrer">sagar-mendiratta-iimcalumni</a></p>
-          <p class="small" style="margin-top:10px;">(If you want, I can add GitHub/Portfolio buttons once you share the links.)</p>
+          <p class="small" style="margin-top:10px;">Tip: If you want GitHub / Portfolio links on the top bar, share the URLs.</p>
         </section>
       </aside>
     </div>
