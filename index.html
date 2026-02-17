@@ -3,611 +3,731 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Sagar Mendiratta — CV</title>
-  <meta name="description" content="Sagar Mendiratta — Finance professional focused on risk management, derivatives, and financial analysis. Mumbai. PGCFA, IIM Calcutta." />
+  <meta name="description" content="Sagar Mendiratta — Financial Risk Manager (Mumbai) | PGCFA (IIM Calcutta)" />
+  <title>Sagar Mendiratta</title>
 
-  <!-- Optional: nicer font (works on GitHub Pages) -->
+  <!-- Font (optional). If it fails, site falls back to system fonts. -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
     :root{
-      /* Light mode (close to the sample layout) */
-      --bg: #f5f7fb;
-      --card: #ffffff;
-      --text: #0b1220;
-      --muted: #55657a;
-      --line: rgba(15, 23, 42, 0.12);
-
-      /* Navy + gold accents */
-      --navy: #0b1b3d;
-      --gold: #b08d24;
-      --goldSoft: rgba(176, 141, 36, 0.12);
-
-      --shadow: 0 10px 30px rgba(2,6,23,.08);
-      --radius: 18px;
-      --max: 980px;
+      --bg: #070B14;          /* deep navy */
+      --bg2:#0B1220;          /* navy */
+      --surface:#0F1B2D;      /* card navy */
+      --surface2:#0C1626;
+      --text:#EAF0FF;
+      --muted:#A9B4CC;
+      --muted2:#7F8AA3;
+      --gold:#D4AF37;
+      --gold2:#F0D777;
+      --line: rgba(212,175,55,.18);
+      --shadow: 0 18px 40px rgba(0,0,0,.45);
+      --radius: 22px;
+      --radius2: 16px;
+      --max: 1120px;
     }
 
-    @media (prefers-color-scheme: dark){
-      :root{
-        --bg: #070b16;
-        --card: #0b142a;
-        --text: #eef2ff;
-        --muted: #a9b6d6;
-        --line: rgba(148,163,184,.18);
-
-        --navy: #0b142a;
-        --gold: #d4af37;
-        --goldSoft: rgba(212,175,55,0.12);
-
-        --shadow: 0 16px 48px rgba(0,0,0,.35);
-      }
-    }
-
-    *{ box-sizing:border-box; }
-    html{ scroll-behavior:smooth; }
+    *{ box-sizing: border-box; }
+    html{ scroll-behavior: smooth; }
     body{
       margin:0;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: radial-gradient(1000px 700px at 10% 10%, rgba(212,175,55,.10), transparent 60%),
+                  radial-gradient(900px 600px at 90% 30%, rgba(240,215,119,.08), transparent 55%),
+                  linear-gradient(180deg, var(--bg), var(--bg2));
       color: var(--text);
-      background:
-        radial-gradient(900px 520px at 12% -10%, var(--goldSoft), transparent 60%),
-        radial-gradient(900px 520px at 100% 10%, rgba(59,130,246,.10), transparent 60%),
-        var(--bg);
-      line-height: 1.6;
+      line-height: 1.55;
+      overflow-x: hidden;
     }
 
-    a{ color: var(--gold); text-decoration: none; }
-    a:hover{ text-decoration: underline; }
+    /* subtle grid */
+    body:before{
+      content:"";
+      position: fixed;
+      inset: 0;
+      pointer-events:none;
+      background-image:
+        linear-gradient(to right, rgba(255,255,255,.04) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255,255,255,.04) 1px, transparent 1px);
+      background-size: 56px 56px;
+      mask-image: radial-gradient(900px 600px at 30% 20%, black, transparent 70%);
+      opacity: .30;
+      z-index: -1;
+    }
 
-    .wrap{ max-width: var(--max); margin: 0 auto; padding: 28px 18px 60px; }
+    a{ color: inherit; text-decoration: none; }
+    a:hover{ color: var(--gold2); }
 
-    /* Top nav (like sample) */
+    .wrap{
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 28px 20px 80px;
+    }
+
+    /* Top nav */
     .nav{
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(10px);
+      background: linear-gradient(180deg, rgba(7,11,20,.88), rgba(7,11,20,.55));
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+    .nav-inner{
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 14px 20px;
       display:flex;
       align-items:center;
-      justify-content:space-between;
-      gap: 12px;
-      padding: 10px 14px;
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,.55);
-      backdrop-filter: blur(10px);
-      border-radius: 999px;
-      position: sticky;
-      top: 14px;
-      z-index: 20;
-      box-shadow: 0 8px 22px rgba(2,6,23,.06);
-    }
-    @media (prefers-color-scheme: dark){
-      .nav{ background: rgba(11,20,42,.66); box-shadow: 0 10px 26px rgba(0,0,0,.25); }
+      justify-content: space-between;
+      gap: 14px;
     }
     .brand{
-      display:flex; align-items:center; gap:10px;
-      font-weight: 800; letter-spacing: .2px;
-      color: var(--text);
-      white-space: nowrap;
+      display:flex;
+      align-items:center;
+      gap: 12px;
+      min-width: 220px;
     }
-    .brand .dot{
-      width: 10px; height: 10px; border-radius: 999px;
-      background: linear-gradient(180deg, var(--gold), rgba(59,130,246,.65));
-      box-shadow: 0 0 0 4px rgba(176,141,36,.12);
+    .mark{
+      width: 34px;
+      height: 34px;
+      border-radius: 12px;
+      background: radial-gradient(14px 14px at 30% 35%, rgba(240,215,119,.95), rgba(212,175,55,.55)),
+                  linear-gradient(145deg, rgba(212,175,55,.25), rgba(255,255,255,.05));
+      border: 1px solid rgba(212,175,55,.35);
+      box-shadow: 0 10px 24px rgba(212,175,55,.12);
     }
+    .brand strong{ font-weight: 650; letter-spacing: .2px; }
+    .brand span{ color: var(--muted); font-size: 12.5px; display:block; margin-top: -2px; }
+
     .links{
-      display:flex; gap: 8px;
-      overflow:auto;
-      scrollbar-width: none;
-      -ms-overflow-style: none;
+      display:flex;
+      align-items:center;
+      gap: 18px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
     }
-    .links::-webkit-scrollbar{ display:none; }
     .links a{
       color: var(--muted);
-      font-weight: 600;
-      font-size: 13.5px;
+      font-size: 13px;
       padding: 8px 10px;
       border-radius: 999px;
       border: 1px solid transparent;
-      flex: 0 0 auto;
     }
     .links a:hover{
       color: var(--text);
-      border-color: var(--line);
-      background: rgba(15,23,42,.04);
-      text-decoration:none;
-    }
-    @media (prefers-color-scheme: dark){
-      .links a:hover{ background: rgba(255,255,255,.04); }
+      border-color: rgba(212,175,55,.25);
+      background: rgba(212,175,55,.06);
     }
 
-    /* Hero */
-    .hero{
-      margin-top: 18px;
-      border: 1px solid var(--line);
-      background: var(--card);
+    /* Layout */
+    .grid{
+      margin-top: 34px;
+      display:grid;
+      grid-template-columns: 420px 1fr;
+      gap: 24px;
+      align-items: start;
+    }
+
+    /* Left profile card */
+    .profile{
+      position: sticky;
+      top: 84px;
       border-radius: var(--radius);
+      background: linear-gradient(180deg, rgba(15,27,45,.92), rgba(12,22,38,.92));
+      border: 1px solid rgba(255,255,255,.07);
       box-shadow: var(--shadow);
-      padding: 22px;
-      display: grid;
-      grid-template-columns: 88px 1fr;
-      gap: 16px;
-      align-items: center;
+      overflow: hidden;
+    }
+    .profile-top{
+      padding: 22px 22px 18px;
+      border-bottom: 1px solid rgba(255,255,255,.06);
+      background:
+        radial-gradient(700px 220px at 50% 0%, rgba(212,175,55,.10), transparent 55%);
+    }
+    .avatar-row{
+      display:flex;
+      gap: 14px;
+      align-items:center;
     }
     .avatar{
-      width: 88px; height: 88px;
-      border-radius: 18px;
-      overflow: hidden;
-      border: 1px solid var(--line);
-      background: linear-gradient(145deg, rgba(176,141,36,.18), rgba(255,255,255,.06));
-      display:grid; place-items:center;
-      font-weight: 900;
-      color: var(--muted);
+      width: 74px;
+      height: 74px;
+      border-radius: 20px;
+      border: 1px solid rgba(212,175,55,.35);
+      background: rgba(255,255,255,.06);
+      overflow:hidden;
+      flex: 0 0 auto;
+      box-shadow: 0 12px 26px rgba(0,0,0,.35);
     }
-    .avatar img{ width:100%; height:100%; object-fit: cover; display:block; }
-
-    .loc{
-      color: var(--muted);
-      font-weight: 600;
-      font-size: 13.5px;
-      margin-bottom: 6px;
+    .avatar img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display:block;
     }
-    h1{
+    .hgroup h1{
       margin: 0;
-      font-size: clamp(26px, 3.2vw, 34px);
-      line-height: 1.15;
+      font-size: 22px;
       letter-spacing: .2px;
+      line-height: 1.2;
     }
-    .tag{
-      margin: 10px 0 0;
+    .hgroup .title{
       color: var(--muted);
-      font-size: 14.5px;
-      max-width: 64ch;
+      margin-top: 6px;
+      font-size: 13px;
     }
-    .cta{
+    .tagline{
       margin-top: 14px;
+      color: var(--muted);
+      font-size: 13.5px;
+    }
+
+    .cta{
       display:flex;
       gap: 10px;
       flex-wrap: wrap;
+      margin-top: 16px;
     }
     .btn{
-      display:inline-flex; align-items:center; gap: 8px;
+      display:inline-flex;
+      align-items:center;
+      gap: 9px;
       padding: 10px 12px;
       border-radius: 12px;
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,.55);
+      font-size: 13px;
+      border: 1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,.04);
       color: var(--text);
-      font-weight: 700;
-      font-size: 14px;
-      text-decoration:none;
-      transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+      transition: transform .12s ease, background .12s ease, border-color .12s ease;
+      cursor: pointer;
     }
-    @media (prefers-color-scheme: dark){
-      .btn{ background: rgba(255,255,255,.04); }
+    .btn:hover{
+      transform: translateY(-1px);
+      border-color: rgba(212,175,55,.32);
+      background: rgba(212,175,55,.08);
+      color: var(--text);
     }
-    .btn:hover{ transform: translateY(-1px); box-shadow: 0 10px 18px rgba(2,6,23,.08); text-decoration:none; }
     .btn.primary{
-      border-color: rgba(176,141,36,.55);
-      background: linear-gradient(180deg, rgba(176,141,36,.14), rgba(176,141,36,.06));
+      border-color: rgba(212,175,55,.38);
+      background: linear-gradient(180deg, rgba(212,175,55,.18), rgba(212,175,55,.08));
     }
-
-    /* Stats row (like sample) */
-    .stats{
-      margin-top: 14px;
-      display:grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 12px;
+    .icon{
+      width: 16px; height:16px; display:inline-block;
     }
-    .stat{
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      background: var(--card);
-      box-shadow: 0 8px 22px rgba(2,6,23,.06);
-      padding: 14px 14px 12px;
-    }
-    @media (prefers-color-scheme: dark){
-      .stat{ box-shadow: 0 12px 28px rgba(0,0,0,.25); }
-    }
-    .stat .k{
-      font-size: 24px;
-      font-weight: 850;
-      letter-spacing: .2px;
-    }
-    .stat .l{
-      margin-top: 4px;
-      color: var(--muted);
-      font-weight: 600;
-      font-size: 12.8px;
-    }
-
-    /* Content sections */
-    .section{
-      margin-top: 14px;
-      border: 1px solid var(--line);
-      background: var(--card);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding: 18px;
-    }
-    .section h2{
-      margin: 0 0 10px;
-      font-size: 18px;
-      letter-spacing: .2px;
-    }
-    .sub{
-      margin: -2px 0 14px;
-      color: var(--muted);
-      font-weight: 600;
-      font-size: 13.5px;
-    }
-
-    .exp{
-      display:flex; flex-direction: column; gap: 12px;
-      margin-top: 12px;
-    }
-    .job{
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      background: rgba(15,23,42,.02);
-      padding: 14px 14px 12px;
-      position:relative;
-      overflow:hidden;
-    }
-    .job::before{
-      content:"";
-      position:absolute;
-      left:0; top:0; bottom:0; width:3px;
-      background: linear-gradient(180deg, var(--gold), rgba(59,130,246,.65));
-      opacity:.85;
-    }
-    @media (prefers-color-scheme: dark){
-      .job{ background: rgba(255,255,255,.03); }
-    }
-    .jobTop{
-      display:flex; justify-content: space-between; gap: 12px; align-items:flex-start;
-      flex-wrap: wrap;
-    }
-    .role{ font-weight: 850; margin:0; }
     .meta{
-      color: var(--muted);
-      font-weight: 650;
-      font-size: 13.5px;
-      white-space: nowrap;
-    }
-    .company{ margin: 6px 0 0; color: var(--muted); font-weight: 650; }
-    .job ul{ margin: 10px 0 0 18px; }
-    .job li{ margin: 6px 0; }
-
-    .grid2{
-      margin-top: 12px;
+      padding: 18px 22px 22px;
       display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
+      gap: 10px;
     }
-    .pillbox{
-      border:1px solid var(--line);
-      border-radius: 16px;
-      padding: 14px;
-      background: rgba(15,23,42,.02);
-    }
-    @media (prefers-color-scheme: dark){
-      .pillbox{ background: rgba(255,255,255,.03); }
-    }
-    .pills{
-      display:flex; flex-wrap:wrap; gap: 8px;
-      margin-top: 10px;
-    }
-    .pill{
-      border:1px solid var(--line);
-      border-radius: 999px;
-      padding: 7px 10px;
-      font-weight: 650;
-      font-size: 13px;
-      background: rgba(255,255,255,.6);
-    }
-    @media (prefers-color-scheme: dark){
-      .pill{ background: rgba(255,255,255,.04); }
-    }
-
-    .contactGrid{
-      display:grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 12px;
-      margin-top: 10px;
-    }
-    .contactCard{
-      border:1px solid var(--line);
-      border-radius: 16px;
-      padding: 14px;
-      background: rgba(15,23,42,.02);
-    }
-    @media (prefers-color-scheme: dark){
-      .contactCard{ background: rgba(255,255,255,.03); }
-    }
-    .contactCard .t{ color: var(--muted); font-weight:700; font-size: 12.5px; }
-    .contactCard .v{ margin-top: 6px; font-weight: 750; }
-
-    .pdf{
-      margin-top: 12px;
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      overflow: hidden;
-      background: rgba(255,255,255,.5);
-    }
-    @media (prefers-color-scheme: dark){
-      .pdf{ background: rgba(255,255,255,.03); }
-    }
-    iframe{ width:100%; height: 560px; border:0; display:block; }
-
-    footer{
-      margin-top: 16px;
-      color: var(--muted);
-      font-size: 13px;
+    .meta-item{
       display:flex;
       justify-content: space-between;
+      gap: 10px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      background: rgba(255,255,255,.03);
+      border: 1px solid rgba(255,255,255,.06);
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .meta-item b{ color: var(--text); font-weight: 600; }
+    .meta-item a{ color: var(--gold2); }
+    .meta-item a:hover{ text-decoration: underline; }
+
+    .stats{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    .stat{
+      border-radius: 16px;
+      background: rgba(255,255,255,.03);
+      border: 1px solid rgba(255,255,255,.06);
+      padding: 12px;
+    }
+    .stat .num{
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: .2px;
+      color: var(--gold2);
+    }
+    .stat .lbl{
+      margin-top: 2px;
+      font-size: 12.5px;
+      color: var(--muted);
+    }
+
+    /* Right content */
+    .content{
+      display:grid;
+      gap: 18px;
+    }
+    section{
+      border-radius: var(--radius);
+      background: rgba(15,27,45,.55);
+      border: 1px solid rgba(255,255,255,.07);
+      box-shadow: 0 14px 30px rgba(0,0,0,.32);
+      overflow: hidden;
+    }
+    .section-inner{
+      padding: 20px 20px 22px;
+    }
+    .section-head{
+      display:flex;
+      align-items:flex-end;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 18px 20px;
+      border-bottom: 1px solid rgba(255,255,255,.06);
+      background:
+        linear-gradient(90deg, rgba(212,175,55,.10), transparent 55%),
+        radial-gradient(700px 220px at 0% 0%, rgba(212,175,55,.10), transparent 55%);
+    }
+    .section-head h2{
+      margin: 0;
+      font-size: 16px;
+      letter-spacing: .3px;
+    }
+    .section-head p{
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .cards{ display:grid; gap: 12px; }
+    .card{
+      border-radius: 18px;
+      padding: 14px 14px;
+      background: rgba(255,255,255,.03);
+      border: 1px solid rgba(255,255,255,.06);
+    }
+    .card-top{
+      display:flex;
+      align-items:flex-start;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .role{
+      font-weight: 650;
+      letter-spacing: .2px;
+      margin: 0;
+    }
+    .org{
+      margin: 2px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .when{
+      color: var(--gold2);
+      font-size: 12.5px;
+      white-space: nowrap;
+      border: 1px solid rgba(212,175,55,.25);
+      background: rgba(212,175,55,.08);
+      padding: 6px 10px;
+      border-radius: 999px;
+    }
+    ul{
+      margin: 10px 0 0;
+      padding-left: 18px;
+      color: var(--muted);
+    }
+    li{ margin: 6px 0; }
+
+    .chips{
+      display:flex;
       flex-wrap: wrap;
       gap: 10px;
-      padding: 0 6px;
+    }
+    .chip{
+      border-radius: 999px;
+      padding: 8px 12px;
+      background: rgba(255,255,255,.03);
+      border: 1px solid rgba(255,255,255,.06);
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .chip strong{ color: var(--text); font-weight: 600; }
+
+    .footer{
+      margin-top: 18px;
+      color: var(--muted2);
+      font-size: 12px;
+      text-align: center;
+    }
+
+    /* Reveal animation */
+    .reveal{
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity .5s ease, transform .5s ease;
+    }
+    .reveal.on{
+      opacity: 1;
+      transform: translateY(0);
     }
 
     /* Mobile */
-    @media (max-width: 780px){
-      .hero{ grid-template-columns: 72px 1fr; padding: 18px; }
-      .avatar{ width:72px; height:72px; border-radius: 16px; }
-      .stats{ grid-template-columns: repeat(2, 1fr); }
-      .grid2{ grid-template-columns: 1fr; }
-      .contactGrid{ grid-template-columns: 1fr; }
-      iframe{ height: 520px; }
+    @media (max-width: 980px){
+      .grid{ grid-template-columns: 1fr; }
+      .profile{ position: relative; top: auto; }
+      .nav-inner{ gap: 10px; }
+      .brand{ min-width: auto; }
     }
-
-    @media (max-width: 420px){
-      .nav{ border-radius: 16px; }
-      .brand{ font-size: 14px; }
-      .links a{ font-size: 13px; padding: 8px 9px; }
-      iframe{ height: 460px; }
+    @media (max-width: 520px){
+      .wrap{ padding: 18px 14px 70px; }
+      .nav-inner{ padding: 12px 14px; }
+      .links{ gap: 8px; }
+      .links a{ padding: 7px 9px; }
+      .section-head{ flex-direction: column; align-items: flex-start; }
+      .avatar{ width: 64px; height: 64px; border-radius: 18px; }
+      .hgroup h1{ font-size: 20px; }
+      .stats{ grid-template-columns: 1fr 1fr; }
     }
   </style>
 </head>
 
 <body>
-  <div class="wrap">
+  <header class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="#top" aria-label="Home">
+        <span class="mark" aria-hidden="true"></span>
+        <div>
+          <strong>Sagar Mendiratta</strong>
+          <span>Financial Risk Management · Mumbai</span>
+        </div>
+      </a>
 
-    <!-- Sticky nav -->
-    <div class="nav">
-      <div class="brand"><span class="dot"></span> Sagar Mendiratta</div>
-      <div class="links" aria-label="On-page navigation">
-        <a href="#about">About</a>
+      <nav class="links" aria-label="Primary">
         <a href="#experience">Experience</a>
         <a href="#skills">Skills</a>
         <a href="#education">Education</a>
+        <a href="#certs">Certifications</a>
         <a href="#contact">Contact</a>
-        <a href="resume.pdf" target="_blank" rel="noreferrer">Download CV</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top" class="wrap">
+    <div class="grid">
+      <!-- LEFT -->
+      <aside class="profile reveal">
+        <div class="profile-top">
+          <div class="avatar-row">
+            <div class="avatar">
+              <img src="profile.jpg" alt="Sagar Mendiratta" />
+            </div>
+            <div class="hgroup">
+              <h1>Sagar Mendiratta</h1>
+              <div class="title">Senior Manager — Financial Risk Management (HDFC Credila)</div>
+            </div>
+          </div>
+
+          <div class="tagline">
+            6+ years across <b>equity analysis</b>, <b>risk management</b>, and <b>financial operations</b> — with deep exposure to derivatives,
+            swaps, options, and multi-asset trading platforms. <span style="color:var(--gold2)">PGCFA, IIM Calcutta</span>.
+          </div>
+
+          <div class="cta">
+            <a class="btn primary" href="resume.pdf" target="_blank" rel="noopener">
+              <span class="icon" aria-hidden="true">⬇️</span> Download Resume
+            </a>
+            <a class="btn" href="https://www.linkedin.com/in/sagar-mendiratta-iimcalumni/" target="_blank" rel="noopener">
+              <span class="icon" aria-hidden="true">in</span> LinkedIn
+            </a>
+            <a class="btn" href="mailto:sagarmendiratta04@gmail.com">
+              <span class="icon" aria-hidden="true">✉️</span> Email
+            </a>
+          </div>
+
+          <div class="stats">
+            <div class="stat">
+              <div class="num">6+ yrs</div>
+              <div class="lbl">Finance & Risk</div>
+            </div>
+            <div class="stat">
+              <div class="num">10k+</div>
+              <div class="lbl">Clients scaled (TradeX)</div>
+            </div>
+            <div class="stat">
+              <div class="num">70+</div>
+              <div class="lbl">Trading apps exposure</div>
+            </div>
+            <div class="stat">
+              <div class="num">20+</div>
+              <div class="lbl">Hires led end‑to‑end</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="meta">
+          <div class="meta-item"><span>Location</span><b>Mumbai, India</b></div>
+          <div class="meta-item"><span>Phone</span><b><a href="tel:+919868755288">+91 98687 55288</a></b></div>
+          <div class="meta-item"><span>Email</span><b><a href="mailto:sagarmendiratta04@gmail.com">sagarmendiratta04@gmail.com</a></b></div>
+          <div class="meta-item"><span>Headline</span><b>Mumbai · PGCFA (IIM Calcutta)</b></div>
+        </div>
+      </aside>
+
+      <!-- RIGHT -->
+      <div class="content">
+        <section id="experience" class="reveal">
+          <div class="section-head">
+            <div>
+              <h2>Experience</h2>
+              <p>Selected roles & impact</p>
+            </div>
+          </div>
+          <div class="section-inner">
+            <div class="cards">
+              <div class="card">
+                <div class="card-top">
+                  <div>
+                    <p class="role">Senior Manager — Financial Risk Management</p>
+                    <p class="org">HDFC Credila Financial Services Limited</p>
+                  </div>
+                  <div class="when">Dec ’25 — Now</div>
+                </div>
+                <ul>
+                  <li>Working in financial risk management team to mitigate <b>currency</b>, <b>interest rate</b>, and <b>market risk</b>.</li>
+                </ul>
+              </div>
+
+              <div class="card">
+                <div class="card-top">
+                  <div>
+                    <p class="role">Finance Professional — Trade Consultant</p>
+                    <p class="org">TradeX — Information exchange for trading on world events</p>
+                  </div>
+                  <div class="when">Aug ’23 — Dec ’25</div>
+                </div>
+                <ul>
+                  <li>Led the development of binary options and attracted <b>10k+ clients</b>, improving liquidity & settlement proof.</li>
+                  <li>Developed hedging / trade strategies for the internal trading team.</li>
+                  <li>Partnered with founders, market makers, product & data science teams to improve tradability and engagement.</li>
+                  <li>Owned technical hiring efforts; helped bring in <b>20+ employees</b>.</li>
+                </ul>
+              </div>
+
+              <div class="card">
+                <div class="card-top">
+                  <div>
+                    <p class="role">Senior Analyst</p>
+                    <p class="org">The D.E. Shaw Company (Arcesium)</p>
+                  </div>
+                  <div class="when">Oct ’22 — Jun ’23</div>
+                </div>
+                <ul>
+                  <li>Built & booked hedging strategies for a major U.S. hedge fund (AUM ~ <b>$400M</b>).</li>
+                  <li>Used Bloomberg to verify valuations for interest rate swaps (notional <b>$2M–$20M</b>).</li>
+                  <li>Supported trade bookings, valuations, portfolio setups and P&L exceptions across options, swaps, FI, OTC derivatives & loans.</li>
+                </ul>
+              </div>
+
+              <div class="card">
+                <div class="card-top">
+                  <div>
+                    <p class="role">Senior Risk Analyst</p>
+                    <p class="org">CRISIL (An S&P Global Company)</p>
+                  </div>
+                  <div class="when">Nov ’19 — Sep ’22</div>
+                </div>
+                <ul>
+                  <li>Led secondary market making operations; reduced valuation trading errors by <b>~50%</b>.</li>
+                  <li>Worked with Trading Desks, Quants, Product Control, Risk, Platform Owners & Developers to resolve P&L breaks and risk spikes.</li>
+                  <li>Led enhancements for <b>10+</b> trading applications; gathered requirements & drove delivery.</li>
+                  <li>Presented monthly reports on P&L & risk issues and resolutions in multi-region stakeholder forums.</li>
+                </ul>
+              </div>
+
+              <div class="card">
+                <div class="card-top">
+                  <div>
+                    <p class="role">Associate — Quantitative Research</p>
+                    <p class="org">CRISIL (An S&P Global Company)</p>
+                  </div>
+                  <div class="when">Aug ’18 — Nov ’19</div>
+                </div>
+                <ul>
+                  <li>Led CDS/equity event-study and panel regression work (identified <b>4</b> significant CDS drivers).</li>
+                  <li>Built an R-based climate risk stress-testing model for macro impacts; supported investment-bank pitch decks.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="skills" class="reveal">
+          <div class="section-head">
+            <div>
+              <h2>Skills & Tools</h2>
+              <p>Core strengths and toolset</p>
+            </div>
+          </div>
+          <div class="section-inner">
+            <div class="chips" style="margin-bottom:12px">
+              <span class="chip"><strong>Financial Analysis</strong></span>
+              <span class="chip"><strong>Risk Management</strong></span>
+              <span class="chip"><strong>Derivative Product Knowledge</strong></span>
+              <span class="chip"><strong>Stakeholder Management</strong></span>
+              <span class="chip"><strong>Reporting & Documentation</strong></span>
+              <span class="chip"><strong>Product/Application Development</strong></span>
+              <span class="chip"><strong>Technical Hiring</strong></span>
+            </div>
+
+            <div class="chips">
+              <span class="chip">Bloomberg</span>
+              <span class="chip">SQL</span>
+              <span class="chip">R Language</span>
+              <span class="chip">Advanced Excel</span>
+              <span class="chip">Unix</span>
+              <span class="chip">Splunk</span>
+              <span class="chip">Geneos</span>
+            </div>
+          </div>
+        </section>
+
+        <section id="education" class="reveal">
+          <div class="section-head">
+            <div>
+              <h2>Education</h2>
+              <p>Academic background</p>
+            </div>
+          </div>
+          <div class="section-inner">
+            <div class="cards">
+              <div class="card">
+                <div class="card-top">
+                  <div>
+                    <p class="role">PGCFA</p>
+                    <p class="org">Indian Institute of Management Calcutta</p>
+                  </div>
+                  <div class="when">2020</div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-top">
+                  <div>
+                    <p class="role">B.Sc. (Hons) Statistics</p>
+                    <p class="org">University of Delhi</p>
+                  </div>
+                  <div class="when">2017</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="certs" class="reveal">
+          <div class="section-head">
+            <div>
+              <h2>Certifications</h2>
+              <p>Credentials</p>
+            </div>
+          </div>
+          <div class="section-inner">
+            <div class="cards">
+              <div class="card">
+                <div class="card-top">
+                  <div>
+                    <p class="role">CFA Level 2 Candidate</p>
+                    <p class="org">USA</p>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-top">
+                  <div>
+                    <p class="role">Actuarial Science</p>
+                    <p class="org">UK — CT-1, CT-3, CT-4, CT-5</p>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-top">
+                  <div>
+                    <p class="role">Investment Banking Operations</p>
+                    <p class="org">Bombay Stock Exchange</p>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-top">
+                  <div>
+                    <p class="role">NISM Series VIII — Equity Derivatives</p>
+                    <p class="org">NISM</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="contact" class="reveal">
+          <div class="section-head">
+            <div>
+              <h2>Contact</h2>
+              <p>Best ways to reach me</p>
+            </div>
+          </div>
+          <div class="section-inner">
+            <div class="cards">
+              <div class="card">
+                <div class="card-top">
+                  <div>
+                    <p class="role">Email</p>
+                    <p class="org"><a href="mailto:sagarmendiratta04@gmail.com">sagarmendiratta04@gmail.com</a></p>
+                  </div>
+                  <div class="when">Fastest</div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-top">
+                  <div>
+                    <p class="role">LinkedIn</p>
+                    <p class="org"><a href="https://www.linkedin.com/in/sagar-mendiratta-iimcalumni/" target="_blank" rel="noopener">linkedin.com/in/sagar-mendiratta-iimcalumni</a></p>
+                  </div>
+                  <div class="when">DM</div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-top">
+                  <div>
+                    <p class="role">Phone</p>
+                    <p class="org"><a href="tel:+919868755288">+91 98687 55288</a></p>
+                  </div>
+                  <div class="when">Call</div>
+                </div>
+              </div>
+            </div>
+
+            <p class="footer">
+              © <span id="y"></span> Sagar Mendiratta · Built on GitHub Pages
+            </p>
+          </div>
+        </section>
       </div>
     </div>
-
-    <!-- Hero -->
-    <section class="hero" id="top">
-      <div class="avatar">
-        <img src="profile.jpg" alt="Sagar Mendiratta" onerror="this.remove(); this.parentElement.textContent='SM';" />
-      </div>
-
-      <div>
-        <div class="loc">Mumbai, India</div>
-        <h1>Financial Risk Management • Derivatives • Financial Analysis</h1>
-        <p class="tag">
-          6+ years across risk management, trading analytics, and derivatives. Currently in Financial Risk Management at HDFC Credila.
-          PGCFA (IIM Calcutta).
-        </p>
-
-        <div class="cta">
-          <a class="btn primary" href="resume.pdf" target="_blank" rel="noreferrer">⬇️ Download Resume</a>
-          <a class="btn" href="https://www.linkedin.com/in/sagar-mendiratta-iimcalumni/" target="_blank" rel="noreferrer">in LinkedIn</a>
-          <a class="btn" href="mailto:sagarmendiratta04@gmail.com">✉️ Email</a>
-          <a class="btn" href="#contact">📞 Contact</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Stats -->
-    <section class="stats" aria-label="Highlights">
-      <div class="stat"><div class="k">6+</div><div class="l">Years Experience</div></div>
-      <div class="stat"><div class="k">10k+</div><div class="l">Users Impacted (TradeX)</div></div>
-      <div class="stat"><div class="k">$400M</div><div class="l">AUM Exposure (Arcesium)</div></div>
-      <div class="stat"><div class="k">50%</div><div class="l">Error Reduction (CRISIL)</div></div>
-    </section>
-
-    <!-- About -->
-    <section class="section" id="about" style="scroll-margin-top:90px;">
-      <h2>Professional Profile</h2>
-      <div class="sub">Bridging markets understanding with execution</div>
-      <p style="margin:0;color:var(--muted);">
-        I have 6+ years of experience in equity analysis, risk management, and financial analysis with exposure to equity,
-        debt, options, swaps, and other derivatives. I have led teams and worked cross-functionally with investment managers,
-        compliance, prime brokers, product, and engineering to deliver measurable outcomes.
-      </p>
-    </section>
-
-    <!-- Experience -->
-    <section class="section" id="experience" style="scroll-margin-top:90px;">
-      <h2>Professional Experience</h2>
-      <div class="sub">Building depth across risk, derivatives, and trading analytics</div>
-
-      <div class="exp">
-        <div class="job">
-          <div class="jobTop">
-            <p class="role">Senior Manager — Financial Risk Management</p>
-            <div class="meta">Dec 2025 – Present</div>
-          </div>
-          <div class="company">HDFC Credila Financial Services Limited</div>
-          <ul>
-            <li>Working in the financial risk management team to mitigate currency, interest-rate, and market risk.</li>
-          </ul>
-        </div>
-
-        <div class="job">
-          <div class="jobTop">
-            <p class="role">Trade Consultant</p>
-            <div class="meta">Aug 2023 – Dec 2025</div>
-          </div>
-          <div class="company">TradeX — Information exchange for trading on world events</div>
-          <ul>
-            <li>Led development of binary options from diverse information sources; contributed to onboarding 10k+ clients and improving settlement integrity.</li>
-            <li>Developed hedging/trade strategies for the internal trading team; partnered with founders, market makers, product, and data science.</li>
-            <li>Led technical hiring efforts, onboarding 20+ employees.</li>
-          </ul>
-        </div>
-
-        <div class="job">
-          <div class="jobTop">
-            <p class="role">Senior Analyst</p>
-            <div class="meta">Oct 2022 – Jun 2023</div>
-          </div>
-          <div class="company">The D.E. Shaw Company (Arcesium)</div>
-          <ul>
-            <li>Supported hedging strategies for a major US hedge fund (AUM ~ $400M).</li>
-            <li>Collaborated with investment managers, compliance and prime brokers on trade bookings, valuations, portfolio setup, and P&L exceptions.</li>
-            <li>Used Bloomberg to verify valuations for interest rate swaps (notionals $2M–$20M).</li>
-          </ul>
-        </div>
-
-        <div class="job">
-          <div class="jobTop">
-            <p class="role">Senior Risk Analyst</p>
-            <div class="meta">Nov 2019 – Sep 2022</div>
-          </div>
-          <div class="company">CRISIL (An S&P Global Company)</div>
-          <ul>
-            <li>Supported secondary market making for a Swiss investment bank; reduced valuation trading errors by ~50%.</li>
-            <li>Worked across ~70 trading applications spanning front office, risk management, and market data.</li>
-            <li>Gathered requirements and drove improvements for 10+ applications; presented monthly stakeholder updates.</li>
-          </ul>
-        </div>
-
-        <div class="job">
-          <div class="jobTop">
-            <p class="role">Associate — Quantitative Research</p>
-            <div class="meta">Aug 2018 – Nov 2019</div>
-          </div>
-          <div class="company">CRISIL (An S&P Global Company)</div>
-          <ul>
-            <li>Led CDS/equity event-study and panel regression analysis; identified significant CDS drivers.</li>
-            <li>Built an R-based climate risk stress testing model and supported investment banking pitch work.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- Skills -->
-    <section class="section" id="skills" style="scroll-margin-top:90px;">
-      <h2>Core Competencies</h2>
-      <div class="sub">Technical skills and domain expertise</div>
-
-      <div class="grid2">
-        <div class="pillbox">
-          <div style="font-weight:800;color:var(--navy);">Risk & Markets</div>
-          <div class="pills">
-            <span class="pill">Financial Risk Management</span>
-            <span class="pill">Derivatives (IRS/Options/Swaps)</span>
-            <span class="pill">Hedging Strategies</span>
-            <span class="pill">Valuation & P&L Exceptions</span>
-            <span class="pill">Portfolio & Market Data</span>
-          </div>
-        </div>
-
-        <div class="pillbox">
-          <div style="font-weight:800;color:var(--navy);">Analytics & Execution</div>
-          <div class="pills">
-            <span class="pill">Financial Analysis</span>
-            <span class="pill">SQL</span>
-            <span class="pill">R</span>
-            <span class="pill">Advanced Excel</span>
-            <span class="pill">Stakeholder Management</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="grid2">
-        <div class="pillbox">
-          <div style="font-weight:800;color:var(--navy);">Program / Leadership</div>
-          <div class="pills">
-            <span class="pill">Cross-functional Collaboration</span>
-            <span class="pill">Team Leadership (10+)</span>
-            <span class="pill">Hiring & Onboarding (20+)</span>
-            <span class="pill">Documentation & Reporting</span>
-          </div>
-        </div>
-
-        <div class="pillbox">
-          <div style="font-weight:800;color:var(--navy);">Tools</div>
-          <div class="pills">
-            <span class="pill">Bloomberg</span>
-            <span class="pill">Unix</span>
-            <span class="pill">Splunk</span>
-            <span class="pill">Geneos</span>
-            <span class="pill">Jira / Confluence</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Education -->
-    <section class="section" id="education" style="scroll-margin-top:90px;">
-      <h2>Education</h2>
-      <div class="sub">Academic foundation</div>
-
-      <div class="exp">
-        <div class="job">
-          <div class="jobTop">
-            <p class="role">PGCFA</p>
-            <div class="meta">IIM Calcutta</div>
-          </div>
-        </div>
-
-        <div class="job">
-          <div class="jobTop">
-            <p class="role">B.Sc. (Hons) Statistics</p>
-            <div class="meta">Delhi University</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact + Resume -->
-    <section class="section" id="contact" style="scroll-margin-top:90px;">
-      <h2>Get In Touch</h2>
-      <div class="sub">Open to discussing opportunities and collaborations</div>
-
-      <div class="contactGrid">
-        <div class="contactCard">
-          <div class="t">Email</div>
-          <div class="v"><a href="mailto:sagarmendiratta04@gmail.com">sagarmendiratta04@gmail.com</a></div>
-        </div>
-        <div class="contactCard">
-          <div class="t">Phone</div>
-          <div class="v"><a href="tel:+919868755288">+91 98687 55288</a></div>
-        </div>
-        <div class="contactCard">
-          <div class="t">LinkedIn</div>
-          <div class="v"><a href="https://www.linkedin.com/in/sagar-mendiratta-iimcalumni/" target="_blank" rel="noreferrer">linkedin.com/in/sagar-mendiratta-iimcalumni</a></div>
-        </div>
-      </div>
-
-      <div style="margin-top:14px; color: var(--muted); font-weight: 650;">
-        Want a copy of my resume? Download the full PDF version below.
-      </div>
-
-      <div class="pdf" style="margin-top:10px;">
-        <iframe title="Resume PDF" src="resume.pdf#view=FitH"></iframe>
-      </div>
-    </section>
-
-    <footer>
-      <div>© <span id="y"></span> Sagar Mendiratta. All rights reserved.</div>
-      <div><a href="#top">Back to top ↑</a></div>
-    </footer>
-  </div>
+  </main>
 
   <script>
+    // year in footer
     document.getElementById('y').textContent = new Date().getFullYear();
+
+    // reveal on scroll
+    const items = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver((entries)=>{
+      for (const e of entries){
+        if(e.isIntersecting){
+          e.target.classList.add('on');
+          io.unobserve(e.target);
+        }
+      }
+    }, { threshold: 0.12 });
+    items.forEach(el=>io.observe(el));
   </script>
 </body>
 </html>
